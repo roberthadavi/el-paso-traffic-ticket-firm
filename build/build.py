@@ -72,17 +72,18 @@ def head(p):
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header>
-  <div class="topbar"><a href="/" aria-label="{esc(SITE['name'])} home"><img src="/images/el-paso-traffic-ticket-firm-logo-300.webp" srcset="/images/el-paso-traffic-ticket-firm-logo-300.webp 300w, /images/el-paso-traffic-ticket-firm-logo-510.webp 510w" sizes="200px" width="200" height="126" alt="El Paso Traffic Ticket Firm logo — Traffic Ticket Lawyer El Paso, TX" fetchpriority="high"></a></div>
-  <nav class="nav" aria-label="Main">
-    <div class="wrap">
-      <button class="menu-btn" aria-expanded="false" aria-controls="menu">☰ Menu</button>
+<div class="strip"><div class="wrap"><span>📞 Call or text <a href="tel:{SITE['phone_e164']}">{SITE['phone']}</a></span><span class="hours">Free case evaluation · Mon–Fri 8:30–5:30 · Se habla español</span><span><a href="/traffic-ticket-and-warrants-lookup-form/">Free warrant check →</a></span></div></div>
+<header class="hdr">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="{esc(SITE['name'])} home"><img src="/images/el-paso-traffic-ticket-firm-logo-300.webp" srcset="/images/el-paso-traffic-ticket-firm-logo-300.webp 300w, /images/el-paso-traffic-ticket-firm-logo-510.webp 510w" sizes="150px" width="150" height="95" alt="El Paso Traffic Ticket Firm logo — Traffic Ticket Lawyer El Paso, TX" fetchpriority="high"></a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="menu">☰ Menu</button>
+    <nav class="nav" aria-label="Main">
       <ul id="menu">
 {nav_html(p["path"])}
       </ul>
-      <a class="cta" href="/hire-me/">FIGHT! Your Ticket Now!</a>
-    </div>
-  </nav>
+    </nav>
+    <a class="btn cta" href="/fight-your-ticket/">Fight Your Ticket</a>
+  </div>
 </header>
 <main id="main">
 '''
@@ -109,6 +110,7 @@ def footer(p):
             <li><a href="/">Traffic Ticket Lawyer El Paso</a></li>
             <li><a href="/warrant-lawyer/">Warrant Lawyer</a></li>
             <li><a href="/should-i-hire-a-traffic-ticket-lawyer/">Should I Hire a Traffic Ticket Lawyer?</a></li>
+            <li><a href="/fight-your-ticket/">Fight Your Ticket</a></li>
             <li><a href="/hire-me/">Hire Me Online</a></li>
             <li><a href="/traffic-ticket-and-warrants-lookup-form/">Check for Tickets / Warrants</a></li>
             <li><a href="/schedule-an-appointment/">Schedule an Appointment</a></li>
@@ -135,7 +137,7 @@ def footer(p):
     <p>El Paso Traffic Ticket Firm – West. Attorney Robert Navar, principal office {s['address']}. LEGAL DISCLAIMER: The information on this website is for advertising and general information purposes. This information is not intended to be legal advice for you to rely on. Past results do not guarantee a similar outcome; no result is guaranteed.</p>
   </div>
 </footer>
-<div class="mobile-call"><a href="tel:{s['phone_e164']}">📞 Call {s['phone']}</a><a href="/hire-me/">Fight My Ticket</a></div>
+<div class="mobile-call"><a href="tel:{s['phone_e164']}">📞 Call {s['phone']}</a><a class="fight" href="/fight-your-ticket/">Fight Your Ticket</a></div>
 <script src="/assets/site.js?v={SITE['v']}" defer></script>
 </body>
 </html>

@@ -10,7 +10,7 @@ SITE = {
     "address": "7362 Remcon Cir, El Paso, TX 79912",
     "maps": "https://maps.google.com/?cid=4565922412461410031",
     "review_url": "https://search.google.com/local/writereview?placeid=ChIJqcjUJYZD54YR78bBKj5qXT8",
-    "v": "20261101a",
+    "v": "20261101b",
     "nav": [
         ("Traffic Ticket Lawyer El Paso", "/"),
         ("Contact", "/contact/"),
@@ -141,15 +141,17 @@ def body_home():
     return f'''
 <section class="hero">
   <div class="wrap">
+    <span class="eyebrow">El Paso Traffic Ticket Firm – West · Attorney Robert Navar</span>
     <h1>Traffic Ticket Lawyer in El Paso, Texas</h1>
     <p class="big" role="heading" aria-level="2">Don't Pay Your Traffic Ticket!</p>
     <div class="ctas">
-      <a class="btn lg" href="/hire-me/">👉 Hire Me Online</a>
-      <a class="btn lg" href="/traffic-ticket-and-warrants-lookup-form/">👉 Check for Tickets / Warrants</a>
+      <a class="btn lg" href="/fight-your-ticket/">Fight Your Ticket</a>
+      <a class="btn lg ghost" href="/traffic-ticket-and-warrants-lookup-form/">Check for Tickets / Warrants</a>
     </div>
     <p><strong>Experienced Traffic Ticket Attorney in El Paso, Texas</strong></p>
-    <p>At El Paso Traffic Ticket Firm – West, we specialize in providing expert legal representation for individuals dealing with traffic tickets from the <a href="{MUNI}" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline">El Paso Municipal Court</a> and the Justice of the Peace courts. Our team of skilled attorneys understands the nuances of traffic violation law in El Paso and is committed to securing the best possible outcome for your case. We offer free case evaluations for your traffic-related issues, including <a href="/warrant-lawyer/" style="color:#fff;text-decoration:underline">warrants</a> and failure-to-appear citations.</p>
-    <p>Save Time, Money, and NO JAIL TIME.<br>Let the El Paso Traffic Ticket Firm – West team handle it for you! Call {TEL.replace('<a ', '<a style="color:#fff;text-decoration:underline" ')}.</p>
+    <p>At El Paso Traffic Ticket Firm – West, we specialize in providing expert legal representation for individuals dealing with traffic tickets from the <a href="{MUNI}" target="_blank" rel="noopener">El Paso Municipal Court</a> and the Justice of the Peace courts. Our team of skilled attorneys understands the nuances of traffic violation law in El Paso and is committed to securing the best possible outcome for your case. We offer free case evaluations for your traffic-related issues, including <a href="/warrant-lawyer/">warrants</a> and failure-to-appear citations.</p>
+    <p>Save Time, Money, and NO JAIL TIME.<br>Let the El Paso Traffic Ticket Firm – West team handle it for you! Call {TEL}.</p>
+    <div class="trust"><span>4.9★ · 3,100+ Google reviews</span><span>Flat fees, quoted up front</span><span>You never go to court</span><span>Free warrant check</span></div>
   </div>
 </section>
 
@@ -167,6 +169,7 @@ def body_home():
 <section class="sec" aria-labelledby="att-h">
   <div class="wrap">
     <div class="center">
+      <span class="eyebrow">Meet your attorneys</span>
       <p class="kicker">Aaronson and Navar Traffic Ticket Lawyers</p>
       <h2 id="att-h" class="red" style="text-transform:uppercase">Traffic Ticket Attorney</h2>
     </div>
@@ -240,13 +243,13 @@ def body_home():
       <img src="/images/how-to-fight-a-traffic-ticket-el-paso-video-500.webp" width="500" height="334" alt="Video: how to fight a traffic ticket in El Paso, Texas" loading="lazy">
       <button type="button" aria-label="Play video: How to Fight a Traffic Ticket"><span>▶</span></button>
     </div>
-    <p style="margin-top:20px">Prefer to read? See the full guide: <a href="/how-to-fight-a-traffic-ticket-in-el-paso-texas/" style="color:#fff;text-decoration:underline">How to Fight a Traffic Ticket in El Paso Texas</a>.</p>
+    <p style="margin-top:20px">Prefer to read? See the full guide: <a href="/how-to-fight-a-traffic-ticket-in-el-paso-texas/">How to Fight a Traffic Ticket in El Paso Texas</a>.</p>
   </div>
 </section>
 
 <section class="sec" aria-labelledby="blog-h">
   <div class="wrap">
-    <div class="center"><p class="kicker">Keep up with the latest El Paso traffic news and changing traffic laws</p><h2 id="blog-h" class="red">Latest Traffic Blog</h2></div>
+    <div class="center"><span class="eyebrow">From the blog</span><p class="kicker">Keep up with the latest El Paso traffic news and changing traffic laws</p><h2 id="blog-h" class="red">Latest Traffic Blog</h2></div>
     <div class="cards" style="margin-top:30px">{cards}</div>
     <div class="btn-wrap"><a class="btn outline" href="/category/blog/">View all blog posts</a></div>
   </div>
@@ -438,13 +441,35 @@ def body_hire():
 <div>{lead_form("hire")}</div>
 <article class="content" style="font-size:1rem">
   <h2 style="margin-top:0">How it works</h2>
-  <ol>
+  <ol class="steps">
     <li><strong>Send us your ticket.</strong> Fill out the form (or <a href="sms:+19152001133">text a photo of your citation</a> to {PH}).</li>
     <li><strong>We confirm the flat fee.</strong> A staff member calls or texts you, confirms the court and citation details and quotes the flat fee — no surprises.</li>
     <li><strong>We take it from there.</strong> We file our appearance so you don't have to go to court, and we fight for a dismissal, deferred disposition or the best available result. We keep you updated until the case is closed.</li>
   </ol>
   <p>Have an active warrant? Hiring us lets us post an appearance bond to recall the warrant and fight the underlying ticket. Learn more on the <a href="/warrant-lawyer/">warrant lawyer</a> page, or <a href="/traffic-ticket-and-warrants-lookup-form/">let us check for warrants</a> first.</p>
   <div class="callout">Questions before you hire? Read <a href="/should-i-hire-a-traffic-ticket-lawyer/">Should I Hire a Traffic Ticket Lawyer?</a> or the <a href="/faqs/">FAQs</a>, or call {TEL}.</div>
+</article>
+</div></section>
+{reviews_section(6)}'''
+
+# ---------------------------------------------------------------- FIGHT YOUR TICKET
+def body_fight():
+    return f'''
+<div class="band"><div class="wrap"><h1>Fight Your Ticket</h1><p>Hire an El Paso traffic ticket lawyer online — flat fee, no court appearance for you</p></div></div>
+<section class="sec"><div class="wrap layout">
+<div>{lead_form("hire", "Fight Your Ticket — Start Here")}</div>
+<article class="content" style="font-size:1rem">
+  <h2 style="margin-top:0">What happens next</h2>
+  <ol class="steps">
+    <li><strong>Send us your ticket.</strong> Fill out the form, or <a href="sms:+19152001133">text a photo of your citation</a> to {PH}.</li>
+    <li><strong>We confirm the flat fee.</strong> A staff member calls or texts you, confirms the court and citation details and quotes the flat fee — no surprises, no hourly billing.</li>
+    <li><strong>We fight it.</strong> We file our appearance so you don't go to court and we pursue a dismissal, deferred disposition or the best available result — and keep you updated until the case is closed.</li>
+  </ol>
+  <h3>Why not just pay it?</h3>
+  <p>Paying a Texas traffic ticket is a plea of guilty or no contest. It becomes a conviction on your driving record that insurers see for years. In most cases our flat fee is less than the fine plus the insurance increase. Read more: <a href="/should-i-hire-a-traffic-ticket-lawyer/">Should I Hire a Traffic Ticket Lawyer?</a></p>
+  <h3>Have a warrant?</h3>
+  <p>Hiring us lets us post an appearance bond to recall the warrant and fight the underlying ticket. See the <a href="/warrant-lawyer/">warrant lawyer</a> page, or <a href="/traffic-ticket-and-warrants-lookup-form/">let us check for warrants</a> first — it's free.</p>
+  <div class="callout">Prefer to talk first? Call {TEL} or <a href="/schedule-an-appointment/">schedule a free consultation</a>.</div>
 </article>
 </div></section>
 {reviews_section(6)}'''
@@ -683,6 +708,9 @@ PAGES = [
     {"path": "/schedule-an-appointment/", "title": "Schedule a Free Consultation | El Paso Traffic Ticket Firm", "h1": "Schedule an Appointment",
      "description": "Book a free traffic ticket consultation with El Paso Traffic Ticket Firm. Pick a time online and we'll call to review your tickets, warrants and options.",
      "body": body_schedule, "priority": "0.6"},
+    {"path": "/fight-your-ticket/", "title": "Fight Your Ticket | El Paso Traffic Ticket Lawyer — Hire Online", "h1": "Fight Your Ticket",
+     "description": "Fight your El Paso traffic ticket. Send us your citation online, get a flat-fee quote, and never go to court. Speeding, red light, no insurance, warrants and all Class C tickets.",
+     "body": body_fight, "priority": "0.9"},
     {"path": "/hire-me/", "title": "Hire a Traffic Ticket Lawyer Online | El Paso Traffic Ticket Firm", "h1": "Hire Me",
      "description": "Hire an El Paso traffic ticket lawyer online in two minutes. Send us your citation, get a flat-fee quote, and never go to court. Speeding, warrants and more.",
      "body": body_hire, "priority": "0.9"},
