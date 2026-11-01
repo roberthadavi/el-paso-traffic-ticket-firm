@@ -6,6 +6,7 @@ const CANONICAL_HOST = "elpasotrafficticketfirm.com";
 
 // Old WordPress URLs that no longer exist → where they should go (301).
 const REDIRECTS = {
+  "/wp-content/uploads/2022/10/el-logo.png": "/images/el-paso-traffic-ticket-firm-logo.png",
   "/es": "/es/abogado-de-multas-de-transito-el-paso-tx/",
   "/es/index": "/es/abogado-de-multas-de-transito-el-paso-tx/",
   "/espanol": "/es/abogado-de-multas-de-transito-el-paso-tx/",
@@ -98,15 +99,15 @@ export default {
     if (url.pathname === "/api/contact") return handleContact(request, env);
     if (url.pathname.startsWith("/api/")) return json({ ok: false, error: "not_found" }, 404);
 
-    // Legacy WordPress noise → 410 so crawlers drop it quickly
     const p = url.pathname;
+    // Explicit redirects first (with or without trailing slash)
+    const key0 = p.length > 1 && p.endsWith("/") ? p.slice(0, -1) : p;
+    if (REDIRECTS[key0]) return Response.redirect(url.origin + REDIRECTS[key0], 301);
+
+    // Legacy WordPress noise → 410 so crawlers drop it quickly
     if (/^\/(wp-admin|wp-login\.php|wp-json|wp-content|wp-includes|xmlrpc\.php|cdn-cgi\/l\/email-protection)/.test(p) || /\?replytocom=/.test(url.search)) {
       return new Response(null, { status: 410, headers: { "Cache-Control": "public, max-age=86400", ...SECURITY_HEADERS } });
     }
-
-    // Explicit redirects (with or without trailing slash)
-    const key = p.length > 1 && p.endsWith("/") ? p.slice(0, -1) : p;
-    if (REDIRECTS[key]) return Response.redirect(url.origin + REDIRECTS[key], 301);
 
     // Static assets (html_handling adds the trailing slash for directory pages)
     const res = await env.ASSETS.fetch(request);

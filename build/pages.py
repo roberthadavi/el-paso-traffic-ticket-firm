@@ -10,7 +10,7 @@ SITE = {
     "address": "7362 Remcon Cir, El Paso, TX 79912",
     "maps": "https://www.google.com/maps/place/?q=place_id:ChIJY-lIWFP53YYRDXkg7-e4gVY",
     "review_url": "https://search.google.com/local/writereview?placeid=ChIJY-lIWFP53YYRDXkg7-e4gVY",
-    "v": "20261101f",
+    "v": "20261101g",
     "nav": [
         ("Traffic Ticket Lawyer El Paso", "/"),
         ("Services", "/services/"),
@@ -107,6 +107,11 @@ def sidebar(current=None, cta=True):
 def related(items, title="Keep reading"):
     lis = "".join(f'<li><a href="{h}">{t} →</a></li>' for t, h in items)
     return f'<nav class="related" aria-label="Related pages"><h3>{title}</h3><ul>{lis}</ul></nav>'
+
+TTT = "https://admin.trafficfirm.org/forms/v2/ttt-embed.js"
+def ttt_embed(form="checkout"):
+    """TTT Forms v2 embed — skin/affiliate come from the elpasotrafficticketfirm.com site profile in TTT Admin."""
+    return f'<div class="ttt-wrap"><script src="{TTT}" async data-form="{form}"></script><noscript><p>Please enable JavaScript to load the form, or call <a href="tel:{SITE["phone_e164"]}">{PH}</a>.</p></noscript></div>'
 
 def lead_form(kind="hire", heading=None):
     tickets = ["Speeding ticket", "Red light / stop sign ticket", "No insurance (financial responsibility)", "Speeding in a school zone", "No driver's license / invalid license", "CDL / commercial vehicle violation", "Texas State Trooper / DPS citation", "Animal control or ordinance ticket", "Failure to appear / active warrant", "Other Class C misdemeanor", "I'm not sure — please check for me"]
@@ -427,7 +432,7 @@ def body_contact():
   <div class="callout"><strong>El Paso Traffic Ticket Firm – West</strong><br>Address: {SITE['address']}<br>Phone: {TEL}<br>Email: {MAIL}</div>
   <div class="ctarow"><a class="btn" href="tel:{SITE['phone_e164']}">📞 {PH}</a><a class="btn" href="/hire-me/">👉 Hire Me Online</a><a class="btn outline" href="/schedule-an-appointment/">Schedule an Appointment</a></div>
 </article>
-<div>{lead_form("hire", "Send Us Your Ticket")}</div>
+<div>{ttt_embed("warrant-check")}</div>
 </div></section>'''
 
 # ---------------------------------------------------------------- SCHEDULE
@@ -447,7 +452,7 @@ def body_hire():
     return f'''
 <div class="band"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <span>Hire Me</span></nav><h1>Hire Me</h1><p>Hire an El Paso traffic ticket lawyer online in two minutes</p></div></div>
 <section class="sec"><div class="wrap layout">
-<div>{lead_form("hire")}</div>
+<div>{ttt_embed("checkout")}</div>
 <article class="content" style="font-size:1rem">
   <h2 style="margin-top:0">How it works</h2>
   <ol class="steps">
@@ -466,7 +471,7 @@ def body_fight():
     return f'''
 <div class="band"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <span>Fight Your Ticket</span></nav><h1>Fight Your Ticket</h1><p>Hire an El Paso traffic ticket lawyer online — flat fee, no court appearance for you</p></div></div>
 <section class="sec"><div class="wrap layout">
-<div>{lead_form("hire", "Fight Your Ticket — Start Here")}</div>
+<div>{ttt_embed("checkout")}</div>
 <article class="content" style="font-size:1rem">
   <h2 style="margin-top:0">What happens next</h2>
   <ol class="steps">
@@ -488,7 +493,7 @@ def body_lookup():
     return f'''
 <div class="band"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <span>Traffic Ticket and Warrants Lookup Form</span></nav><h1>Traffic Ticket and Warrants Lookup Form</h1><p>Free El Paso ticket and warrant check — Municipal Court and Justice of the Peace courts</p></div></div>
 <section class="sec"><div class="wrap layout">
-<div>{lead_form("lookup")}</div>
+<div>{ttt_embed("warrant-check")}</div>
 <article class="content" style="font-size:1rem">
   <h2 style="margin-top:0">Check for yourself</h2>
   <p>You can also search the court records directly. Use the name and date of birth exactly as they appear on your license:</p>
