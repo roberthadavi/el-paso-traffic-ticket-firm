@@ -144,6 +144,7 @@ def footer(p):
 </footer>
 <div class="mobile-call"><a href="tel:{s['phone_e164']}">📞 Call {s['phone']}</a><a class="fight" href="/fight-your-ticket/">Fight Your Ticket</a></div>
 <script src="/assets/site.js?v={SITE['v']}" defer></script>
+<!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{{"token": "3e55cb8c58d646d4bf0d2b1bc2913885"}}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
 '''
