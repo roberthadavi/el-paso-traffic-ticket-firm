@@ -272,6 +272,6 @@ footer .bottom p{margin:0 auto;max-width:960px}
 
 /* Spanish nav labels run longer */
 html[lang="es"] .nav li a{font-size:.85rem;padding:9px 8px}
-@media (min-width:901px){.nav li a.lang{border:1px solid var(--line);border-radius:20px;padding:6px 12px;margin-left:6px}}
+@media (min-width:901px){.nav li a.lang{display:none}}
 
 .ttt-wrap{min-height:400px}
