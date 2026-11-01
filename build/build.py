@@ -4,6 +4,7 @@ Run: python3 build/build.py   → writes public/**/index.html, sitemap.xml, robo
 Content lives in build/pages.py. Header/footer/schema live here."""
 import json, pathlib, datetime, re, html
 import pages as P
+import services as S
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 PUB = ROOT / "public"
@@ -110,6 +111,8 @@ def footer(p):
           <h3>Traffic Ticket Help</h3>
           <ul>
             <li><a href="/">Traffic Ticket Lawyer El Paso</a></li>
+            <li><a href="/services/">All Services</a></li>
+            <li><a href="/areas-served/">Areas Served</a></li>
             <li><a href="/warrant-lawyer/">Warrant Lawyer</a></li>
             <li><a href="/should-i-hire-a-traffic-ticket-lawyer/">Should I Hire a Traffic Ticket Lawyer?</a></li>
             <li><a href="/fight-your-ticket/">Fight Your Ticket</a></li>
@@ -177,6 +180,8 @@ def schema(p):
     if p["path"] != "/":
         if p.get("type") == "post":
             crumbs.append({"@type": "ListItem", "position": 2, "name": "Blog", "item": s["url"] + "/category/blog/"})
+        if p.get("type") == "service":
+            crumbs.append({"@type": "ListItem", "position": 2, "name": "Services", "item": s["url"] + "/services/"})
         crumbs.append({"@type": "ListItem", "position": len(crumbs) + 1, "name": p["h1"], "item": s["url"] + p["path"]})
     graph.append({"@type": "BreadcrumbList", "itemListElement": crumbs})
     wp = {"@type": p.get("page_type", "WebPage"), "@id": s["url"] + p["path"] + "#webpage", "url": s["url"] + p["path"], "name": p["title"], "description": p["description"], "isPartOf": {"@id": s["url"] + "/#website"}, "about": {"@id": s["url"] + "/#organization"}, "inLanguage": "en-US", "dateModified": TODAY}
@@ -197,6 +202,7 @@ def write(path, content):
     f.write_text(content)
 
 def main():
+    P.PAGES.extend(S.pages())
     for p in P.PAGES:
         body = p["body"]() if callable(p["body"]) else p["body"]
         write(p["path"], head(p) + body + footer(p))

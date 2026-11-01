@@ -10,9 +10,10 @@ SITE = {
     "address": "7362 Remcon Cir, El Paso, TX 79912",
     "maps": "https://www.google.com/maps/place/?q=place_id:ChIJY-lIWFP53YYRDXkg7-e4gVY",
     "review_url": "https://search.google.com/local/writereview?placeid=ChIJY-lIWFP53YYRDXkg7-e4gVY",
-    "v": "20261101d",
+    "v": "20261101e",
     "nav": [
         ("Traffic Ticket Lawyer El Paso", "/"),
+        ("Services", "/services/"),
         ("Contact", "/contact/"),
         ("Schedule an Appointment", "/schedule-an-appointment/"),
         ("Warrant Lawyer", "/warrant-lawyer/"),
@@ -74,17 +75,24 @@ POSTS = [
      "excerpt": "El Paso Municipal Court is renowned for issuing active arrest warrants almost immediately after an appearance date or payment is missed. Here are the ground rules once a warrant is lifted."},
 ]
 
+def all_posts():
+    import services as S
+    new = [{"path": f'/{x["slug"]}/', "h1": x["h1"], "date": x["date"], "img": f'/images/{x["image"]}-800.webp', "excerpt": x["excerpt"]} for x in S.POSTS]
+    return sorted(new, key=lambda x: x["date"], reverse=True) + POSTS
+
 def post_card(p):
     return f'''<article class="card"><a href="{p['path']}" aria-hidden="true" tabindex="-1"><img src="{p['img']}" alt="" width="800" height="450" loading="lazy"></a>
-<div class="body"><h3><a href="{p['path']}">{p['h1']}</a></h3><time datetime="{p['date']}">October 8, 2022</time><p>{p['excerpt']}</p><a class="more" href="{p['path']}" aria-label="Read more: {p['h1']}">Read More »</a></div></article>'''
+<div class="body"><h3><a href="{p['path']}">{p['h1']}</a></h3><time datetime="{p['date']}">{fmt_date(p['date'])}</time><p>{p['excerpt']}</p><a class="more" href="{p['path']}" aria-label="Read more: {p['h1']}">Read More »</a></div></article>'''
 
 def sidebar(current=None, cta=True):
-    recent = "".join(f'<li><a href="{p["path"]}">{p["h1"]}</a><small>October 8, 2022</small></li>' for p in POSTS if p["path"] != current)
+    recent = "".join(f'<li><a href="{p["path"]}">{p["h1"]}</a><small>{fmt_date(p["date"])}</small></li>' for p in all_posts() if p["path"] != current)
     box = f'''<div class="widget box"><h3>Free Case Evaluation</h3><p>Don't pay that ticket. Call or text the office and we'll check your tickets and warrants for free.</p><a class="tel" href="tel:{SITE['phone_e164']}">{PH}</a><a class="btn white" href="/hire-me/">Hire Me Online</a><a class="btn" href="/traffic-ticket-and-warrants-lookup-form/">Check for Warrants</a></div>''' if cta else ""
     return f'''<aside class="side" aria-label="Sidebar">{box}
 <div class="widget"><h3>Recent Posts</h3><ul>{recent}</ul></div>
 <div class="widget"><h3>Traffic Ticket Help</h3><ul>
 <li><a href="/">Traffic Ticket Lawyer El Paso</a></li>
+<li><a href="/services/">All Services</a></li>
+<li><a href="/fight-your-ticket/">Fight Your Ticket</a></li>
 <li><a href="/warrant-lawyer/">Warrant Lawyer</a></li>
 <li><a href="/should-i-hire-a-traffic-ticket-lawyer/">Should I Hire a Traffic Ticket Lawyer?</a></li>
 <li><a href="/faqs/">Frequently Asked Questions</a></li>
@@ -130,10 +138,15 @@ def lead_form(kind="hire", heading=None):
 
 SERVICES = ["Red Light Ticket Citation (Non-camera)", "Animal Control Tickets", "Financial Responsibility / No Insurance Ticket", "CDL License – Commercial Driver's License Violations", "Texas State Trooper Violations", "Stop Sign Tickets", "Speeding in School Zone Tickets", "Code A Restrictions / Driving Without Corrective Lenses", "All Moving Violations", "Trucking Violations", "Ordinance Violations", "All Class C Misdemeanors including animal control tickets, open container, and many more", "Failure to Appear Warrant Dismissal (Recall of Warrants)"]
 
+def _svc_tiles():
+    import services as S
+    if not S.SERVICES: return ""
+    return S.tiles(S.ORDER) + '<p class="center" style="margin-top:18px"><a class="btn outline" href="/services/">See all services</a></p>'
+
 # ---------------------------------------------------------------- HOME
 def body_home():
     svc = "".join(f"<li>{s}</li>" for s in SERVICES)
-    cards = "".join(post_card(p) for p in POSTS[:3])
+    cards = "".join(post_card(p) for p in all_posts()[:3])
     return f'''
 <section class="hero">
   <div class="wrap">
@@ -193,7 +206,7 @@ def body_home():
     <p>Dealing with a warrant related to a traffic violation can be a stressful and overwhelming experience. Our experienced attorneys have a proven track record of successfully handling warrant issues, ensuring that your rights are protected. Whether it's a bench warrant or an arrest warrant, we will work tirelessly to resolve the matter promptly and effectively. If you think you have outstanding traffic tickets or warrants, <a href="{MUNI}" target="_blank" rel="noopener">click here</a> to see what you have with the El Paso Municipal Court, or <a href="/traffic-ticket-and-warrants-lookup-form/">let us check for you for free</a>.</p>
     <p>Although you may be eligible to take a <a href="{TDLR}" target="_blank" rel="noopener">State of Texas approved driver safety course</a> to dismiss a single moving violation, this may not be the best course of action in your particular situation. Even if you are eligible to take the defensive driving course for a traffic ticket dismissal, speak with an experienced traffic ticket lawyer today. We will give you clear options and choices so you can make an informed decision — all consultations are free.</p>
     <h3>Ticket Lawyer El Paso Robert Navar also Defends:</h3>
-    <ul class="services">{svc}</ul>
+    {_svc_tiles() or f'<ul class="services">{svc}</ul>'}
     <h3>Why Choose El Paso Traffic Ticket Firm?</h3>
     <ul>
       <li><strong>Expertise:</strong> Our attorneys focus on traffic law, ensuring you receive a high level of expertise for your case.</li>
@@ -491,7 +504,7 @@ def body_lookup():
 
 # ---------------------------------------------------------------- BLOG INDEX
 def body_blog():
-    cards = "".join(post_card(p) for p in POSTS)
+    cards = "".join(post_card(p) for p in all_posts())
     return f'''
 <div class="band"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <span>Blog</span></nav><h1>Blog</h1><p>El Paso traffic news, Texas traffic law and how to protect your driving record</p></div></div>
 <section class="sec"><div class="wrap layout">
@@ -499,9 +512,14 @@ def body_blog():
 {sidebar(cta=True)}
 </div></section>'''
 
-def post_wrap(p, inner, rel):
+def fmt_date(d):
+    import datetime as _d
+    return _d.date.fromisoformat(d).strftime("%B %-d, %Y")
+
+def post_wrap(p, inner, rel, published="2022-10-08"):
+    upd = "" if published >= "2026-11-01" else f' · Updated <time datetime="2026-11-01">November 1, 2026</time>'
     return f'''
-<div class="band"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/category/blog/">Blog</a> › <span>{p['h1']}</span></nav><h1>{p['h1']}</h1><p><time datetime="{p['date']}">Published October 8, 2022</time> · Updated <time datetime="2026-11-01">November 1, 2026</time> · by Attorney Robert Navar</p></div></div>
+<div class="band"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/category/blog/">Blog</a> › <span>{p['h1']}</span></nav><h1>{p['h1']}</h1><p><time datetime="{published}">Published {fmt_date(published)}</time>{upd} · by Attorney Robert Navar</p></div></div>
 <section class="sec"><div class="wrap layout">
 <article class="content">
   <figure><img src="{p['img']}" alt="{p['alt']}" width="800" height="450" fetchpriority="high" style="width:100%;aspect-ratio:16/9;object-fit:cover"></figure>
