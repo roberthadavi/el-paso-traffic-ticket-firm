@@ -1,0 +1,12 @@
+{
+  "name": "el-paso-traffic-ticket-firm",
+  "private": true,
+  "version": "1.0.0",
+  "description": "elpasotrafficticketfirm.com — static site + Cloudflare Worker",
+  "scripts": {
+    "build": "python3 build/build.py",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": { "wrangler": "^4" }
+}
