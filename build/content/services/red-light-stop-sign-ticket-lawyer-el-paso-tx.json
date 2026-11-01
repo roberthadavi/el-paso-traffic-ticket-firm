@@ -1,9 +1,9 @@
 {
   "slug": "red-light-stop-sign-ticket-lawyer-el-paso-tx",
   "h1": "Red Light & Stop Sign Ticket Lawyer El Paso, TX",
-  "title": "Red Light & Stop Sign Ticket Lawyer El Paso, TX | El Paso Traffic Ticket Firm",
-  "description": "El Paso red light and stop sign ticket lawyer. Officer-issued citations under §544.007 and §544.010 turn on vantage point, signal timing and the stop line. We contest them.",
-  "short": "Officer-issued red light and stop sign tickets turn on vantage point, signal timing and where the stop line was. We test that evidence before you plead to anything.",
+  "title": "Red Light & Stop Sign Ticket Lawyer El Paso, TX | Robert Navar",
+  "description": "El Paso red light and stop sign ticket lawyer. Officer-issued §544.007 and §544.010 citations turn on vantage point, signal timing and the stop line.",
+  "short": "Officer-issued red light and stop sign tickets turn on vantage point, signal timing and the stop line. We test that evidence before you plead.",
   "icon": "light",
   "intro": "<p>A red light or stop sign ticket in El Paso, TX is written by a police officer, not a camera, and that changes how the case is defended. Texas outlawed photographic red-light enforcement in 2019 and El Paso has no red-light cameras, so every citation under Transportation Code §544.007 or §544.010 rests on what one officer says he or she saw from one position at one moment. Our office, led by attorney Robert Navar, defends these citations in El Paso Municipal Court, the El Paso County Justice of the Peace precincts, and the surrounding municipal courts in Socorro, Horizon City, Anthony, Vinton, Clint and Canutillo.</p><p>Disregarding a traffic signal or a stop sign is a Class C misdemeanor and a moving violation. Paying it is a plea of guilty or no contest, and the conviction goes on your driving record where insurers will find it. Before you pay, let us look at the intersection, the officer's vantage point and the signal timing. Call 915-200-1133 or use our <a href='/traffic-ticket-and-warrants-lookup-form/'>ticket lookup form</a>.</p>",
   "sections": [
@@ -21,7 +21,7 @@
     },
     {
       "h2": "Yellow timing and intersection evidence",
-      "html": "<p>Every signalized intersection in El Paso has a timing plan maintained by the City's traffic engineering staff. That plan specifies the yellow change interval and the all-red clearance interval for each approach, and those intervals are supposed to follow engineering standards tied to the approach speed. A yellow that is shorter than the standard for the posted speed creates what engineers call a dilemma zone, where a driver can neither stop safely nor clear the intersection before red. When the facts suggest a short yellow, we request the timing records and signal maintenance logs for the intersection and the date of the citation.</p><p>Other intersection evidence we gather includes the placement and visibility of the stop line and signal heads, construction or lane shifts in effect that day, sun angle for early-morning and late-afternoon citations, and whether a signal was in flash mode or malfunctioning. A signal that was not operating as designed is a defense, not an excuse.</p>"
+      "html": "<p>Every signalized intersection in El Paso has a timing plan maintained by the City's traffic engineering staff. That plan specifies the yellow change interval and the all-red clearance interval for each approach, and those intervals are supposed to follow engineering standards tied to the approach speed. A yellow that is shorter than the standard for the posted speed creates what engineers call a dilemma zone, where a driver can neither stop safely nor clear the intersection before red. When the facts suggest a short yellow, we request the timing records and signal maintenance logs for the intersection and the date of the citation.</p><p>Other intersection evidence we gather includes the placement and visibility of the stop line and signal heads, construction or lane shifts in effect that day, sun angle for early-morning and late-afternoon citations, and whether a signal was in flash mode or malfunctioning.</p>"
     },
     {
       "h2": "Driving safety course and deferred disposition options",
@@ -59,9 +59,22 @@
     }
   ],
   "resources": [
-    {"label": "Texas Transportation Code §544.007 (traffic-control signals)", "url": "https://statutes.capitol.texas.gov/Docs/TN/htm/TN.544.htm#544.007"},
-    {"label": "Texas Transportation Code §544.010 (stop signs and yield signs)", "url": "https://statutes.capitol.texas.gov/Docs/TN/htm/TN.544.htm#544.010"},
-    {"label": "El Paso Municipal Court", "url": "https://www.elpasotexas.gov/municipal-court/"}
+    {
+      "label": "Texas Transportation Code §544.007 (traffic-control signals)",
+      "url": "https://statutes.capitol.texas.gov/Docs/TN/htm/TN.544.htm#544.007"
+    },
+    {
+      "label": "Texas Transportation Code §544.010 (stop signs and yield signs)",
+      "url": "https://statutes.capitol.texas.gov/Docs/TN/htm/TN.544.htm#544.010"
+    },
+    {
+      "label": "El Paso Municipal Court",
+      "url": "https://www.elpasotexas.gov/municipal-courts"
+    }
   ],
-  "related": ["moving-violation-lawyer-el-paso-tx", "speeding-ticket-lawyer-el-paso-tx", "class-c-misdemeanor-lawyer-el-paso-tx"]
+  "related": [
+    "moving-violation-lawyer-el-paso-tx",
+    "speeding-ticket-lawyer-el-paso-tx",
+    "class-c-misdemeanor-lawyer-el-paso-tx"
+  ]
 }

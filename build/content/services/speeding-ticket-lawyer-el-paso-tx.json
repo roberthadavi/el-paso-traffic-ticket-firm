@@ -2,7 +2,7 @@
   "slug": "speeding-ticket-lawyer-el-paso-tx",
   "h1": "Speeding Ticket Lawyer El Paso, TX",
   "title": "Speeding Ticket Lawyer El Paso, TX | El Paso Traffic Ticket Firm",
-  "description": "El Paso speeding ticket lawyer. We contest radar, lidar and pacing evidence, pursue dismissal or deferred disposition, and work to keep the conviction off your record.",
+  "description": "El Paso speeding ticket lawyer. We challenge radar, lidar and pacing evidence and pursue dismissal or deferral so the ticket stays off your driving record.",
   "short": "We contest radar, lidar and pacing evidence and pursue dismissal or deferred disposition so a speeding ticket does not become a conviction on your record.",
   "icon": "gauge",
   "intro": "<p>If you are looking for a speeding ticket lawyer in El Paso, TX, the most important thing to understand is that paying the ticket is not a neutral act. Under Texas law, paying a citation is a plea of guilty or no contest, and the result is a conviction on your driving record that insurers can see. Our office, led by attorney Robert Navar, defends speeding citations in El Paso Municipal Court, the El Paso County Justice of the Peace precincts, and the municipal courts in Socorro, Horizon City, Anthony, Vinton, Clint and Canutillo.</p><p>A speeding ticket is a Class C misdemeanor. It is a criminal charge, the State has the burden of proof, and the officer's speed reading is evidence that can be tested like any other evidence. In many cases there is a path to a dismissal, a reduction to a non-moving violation, or a deferred disposition that keeps the conviction off your record. Call 915-200-1133 or use our <a href='/traffic-ticket-and-warrants-lookup-form/'>ticket lookup form</a> and we will tell you what your options are.</p>",
@@ -59,10 +59,26 @@
     }
   ],
   "resources": [
-    {"label": "Texas Transportation Code §545.351 (maximum speed requirement)", "url": "https://statutes.capitol.texas.gov/Docs/TN/htm/TN.545.htm#545.351"},
-    {"label": "Texas Transportation Code §545.352 (prima facie speed limits)", "url": "https://statutes.capitol.texas.gov/Docs/TN/htm/TN.545.htm#545.352"},
-    {"label": "TDLR driving safety course information", "url": "https://www.tdlr.texas.gov/driver/driver.htm"},
-    {"label": "El Paso Municipal Court", "url": "https://www.elpasotexas.gov/municipal-court/"}
+    {
+      "label": "Texas Transportation Code §545.351 (maximum speed requirement)",
+      "url": "https://statutes.capitol.texas.gov/Docs/TN/htm/TN.545.htm#545.351"
+    },
+    {
+      "label": "Texas Transportation Code §545.352 (prima facie speed limits)",
+      "url": "https://statutes.capitol.texas.gov/Docs/TN/htm/TN.545.htm#545.352"
+    },
+    {
+      "label": "TDLR driving safety course information",
+      "url": "https://www.tdlr.texas.gov/driver/safety/students/taking-a-course.htm"
+    },
+    {
+      "label": "El Paso Municipal Court",
+      "url": "https://www.elpasotexas.gov/municipal-courts"
+    }
   ],
-  "related": ["school-zone-speeding-ticket-lawyer-el-paso-tx", "dps-state-trooper-ticket-lawyer-el-paso-tx", "moving-violation-lawyer-el-paso-tx"]
+  "related": [
+    "school-zone-speeding-ticket-lawyer-el-paso-tx",
+    "dps-state-trooper-ticket-lawyer-el-paso-tx",
+    "moving-violation-lawyer-el-paso-tx"
+  ]
 }

@@ -1,9 +1,9 @@
 {
   "slug": "no-insurance-ticket-lawyer-el-paso-tx",
   "h1": "No Insurance Ticket Lawyer El Paso, TX",
-  "title": "No Insurance Ticket Lawyer El Paso, TX | El Paso Traffic Ticket Firm",
-  "description": "El Paso no insurance ticket lawyer. §601.191 fines of $175-$350, dismissal if you were insured at the time, and how to avoid the license suspension and SR-22 that follow a repeat conviction.",
-  "short": "A §601.191 no-insurance conviction leads to higher fines, suspension and SR-22 filings on repeat. We pursue dismissal if you were covered and limit the damage if you were not.",
+  "title": "No Insurance Ticket Lawyer El Paso, TX | Robert Navar",
+  "description": "El Paso no insurance ticket lawyer. §601.191 fines, dismissal if insured at the stop, and avoiding the suspension and SR-22 that follow a repeat.",
+  "short": "A §601.191 conviction means higher fines, then suspension and SR-22 on repeat. We pursue dismissal if you were covered and limit the damage if you were not.",
   "icon": "shield",
   "intro": "<p>If you need a no insurance ticket lawyer in El Paso, TX, start with this: a citation for failure to maintain financial responsibility under Transportation Code §601.191 is one of the few Class C tickets that gets worse every time it happens. The first conviction is a fine. The second brings a driver's license and registration suspension and a two-year SR-22 filing requirement. Our office, led by attorney Robert Navar, handles these citations in El Paso Municipal Court, the El Paso County Justice of the Peace courts, and the municipal courts in Socorro, Horizon City, Anthony, Vinton, Clint and Canutillo.</p><p>Many of the no-insurance tickets we see were written to drivers who were in fact covered: the card in the glovebox was expired, the policy was in a spouse's name, the car was borrowed, or the officer's database check was wrong. Texas law requires the court to dismiss the charge when the driver shows the policy was in effect at the time of the stop. If you were not covered, there are still ways to limit the damage. Call 915-200-1133 or use our <a href='/traffic-ticket-and-warrants-lookup-form/'>ticket lookup form</a> before you pay anything.</p>",
   "sections": [
@@ -59,10 +59,26 @@
     }
   ],
   "resources": [
-    {"label": "Texas Transportation Code §601.191 (operation of motor vehicle in violation of financial responsibility requirement)", "url": "https://statutes.capitol.texas.gov/Docs/TN/htm/TN.601.htm#601.191"},
-    {"label": "Texas Transportation Code §601.193 (defense: financial responsibility in effect)", "url": "https://statutes.capitol.texas.gov/Docs/TN/htm/TN.601.htm#601.193"},
-    {"label": "Texas Transportation Code §601.231 (suspension on subsequent conviction)", "url": "https://statutes.capitol.texas.gov/Docs/TN/htm/TN.601.htm#601.231"},
-    {"label": "Texas DPS: financial responsibility (SR-22) information", "url": "https://www.dps.texas.gov/section/driver-license/financial-responsibility-insurance-certificate-sr-22"}
+    {
+      "label": "Texas Transportation Code §601.191 (operation of motor vehicle in violation of financial responsibility requirement)",
+      "url": "https://statutes.capitol.texas.gov/Docs/TN/htm/TN.601.htm#601.191"
+    },
+    {
+      "label": "Texas Transportation Code §601.193 (defense: financial responsibility in effect)",
+      "url": "https://statutes.capitol.texas.gov/Docs/TN/htm/TN.601.htm#601.193"
+    },
+    {
+      "label": "Texas Transportation Code §601.231 (suspension on subsequent conviction)",
+      "url": "https://statutes.capitol.texas.gov/Docs/TN/htm/TN.601.htm#601.231"
+    },
+    {
+      "label": "Texas DPS: financial responsibility (SR-22) information",
+      "url": "https://www.dps.texas.gov/section/driver-license/financial-responsibility-insurance-certificate-sr-22"
+    }
   ],
-  "related": ["no-drivers-license-ticket-lawyer-el-paso-tx", "dps-state-trooper-ticket-lawyer-el-paso-tx", "failure-to-appear-lawyer-el-paso-tx"]
+  "related": [
+    "no-drivers-license-ticket-lawyer-el-paso-tx",
+    "dps-state-trooper-ticket-lawyer-el-paso-tx",
+    "failure-to-appear-lawyer-el-paso-tx"
+  ]
 }

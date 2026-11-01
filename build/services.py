@@ -136,12 +136,12 @@ def pages():
                     "image": "/images/el-paso-traffic-ticket-firm-team-1200.webp",
                     "schema_extra": [{"@type": "Service", "name": s["h1"], "serviceType": s["h1"].replace(" El Paso, TX", ""), "provider": {"@id": SITE["url"] + "/#organization"}, "areaServed": {"@type": "AdministrativeArea", "name": "El Paso County, Texas"}, "url": SITE["url"] + f'/{s["slug"]}/', "description": s["description"]}]})
     if SERVICES:
-        out.append({"path": "/services/", "title": "Traffic Ticket Lawyer Services El Paso, TX | El Paso Traffic Ticket Firm", "h1": "Traffic Ticket Lawyer Services in El Paso, TX",
-                    "description": "Every Class C ticket we defend in El Paso: speeding, red light, no insurance, school zone, CDL, DPS trooper tickets, failure to appear, warrants, ordinance and animal control citations.",
+        out.append({"path": "/services/", "title": "Traffic Ticket Lawyer Services in El Paso, TX | Navar Law", "h1": "Traffic Ticket Lawyer Services in El Paso, TX",
+                    "description": "Every Class C ticket we defend in El Paso: speeding, red light, no insurance, school zone, CDL, DPS trooper, failure to appear, warrants, ordinance and animal control.",
                     "body": hub_body, "page_type": "CollectionPage", "priority": "0.9", "changefreq": "monthly",
                     "schema_extra": [{"@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": SITE["url"] + svc_path(sl), "name": svc_meta(sl)["h1"]} for i, sl in enumerate(ORDER) if svc_meta(sl)]}]})
         out.append({"path": "/areas-served/", "title": "Areas Served | Traffic Ticket Lawyer El Paso County, TX", "h1": "Areas Served — Traffic Ticket Lawyer for El Paso County",
-                    "description": "Traffic ticket defense across El Paso County: El Paso, Fort Bliss, Socorro, Horizon City, Canutillo, Vinton, Anthony, Clint, San Elizario and Fabens — municipal, JP and DPS tickets handled by phone.",
+                    "description": "Traffic ticket defense across El Paso County: El Paso, Fort Bliss, Socorro, Horizon City, Canutillo, Vinton, Anthony, Clint and Fabens — municipal, JP and DPS tickets by phone.",
                     "body": areas_body, "priority": "0.6", "changefreq": "yearly"})
     for p in POSTS:
         out.append({"path": f'/{p["slug"]}/', "title": p["title"], "h1": p["h1"], "description": p["description"], "image": f'/images/{p["image"]}-800.webp', "type": "post", "date": p["date"], "modified": p["date"], "body": (lambda p=p: post_body(p)), "faq": [(q["q"], q["a"]) for q in p.get("faq", [])], "priority": "0.6", "changefreq": "yearly"})
