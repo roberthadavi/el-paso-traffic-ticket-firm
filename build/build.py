@@ -75,7 +75,7 @@ def head(p):
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="strip"><div class="wrap"><span>📞 Call or text <a href="tel:{SITE['phone_e164']}">{SITE['phone']}</a></span><span class="hours">Free case evaluation · Mon–Fri 7:30–6:30 · Sat 9–4 · Se habla español</span><span><a href="/traffic-ticket-and-warrants-lookup-form/">Free warrant check →</a></span></div></div>
+<div class="strip"><div class="wrap"><span>📞 Call <a href="tel:{SITE['phone_e164']}">{SITE['phone']}</a></span><span class="hours">Free case evaluation · Mon–Fri 7:30–6:30 · Sat 9–4 · Se habla español</span><span><a href="/traffic-ticket-and-warrants-lookup-form/">Free warrant check →</a></span></div></div>
 <header class="hdr">
   <div class="wrap">
     <a class="logo" href="/" aria-label="{esc(SITE['name'])} home"><img src="/images/el-paso-traffic-ticket-firm-logo-300.webp" srcset="/images/el-paso-traffic-ticket-firm-logo-300.webp 300w, /images/el-paso-traffic-ticket-firm-logo-510.webp 510w" sizes="150px" width="150" height="95" alt="El Paso Traffic Ticket Firm logo — Traffic Ticket Lawyer El Paso, TX" fetchpriority="high"></a>

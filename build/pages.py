@@ -10,7 +10,7 @@ SITE = {
     "address": "7362 Remcon Cir, El Paso, TX 79912",
     "maps": "https://www.google.com/maps/place/?q=place_id:ChIJY-lIWFP53YYRDXkg7-e4gVY",
     "review_url": "https://search.google.com/local/writereview?placeid=ChIJY-lIWFP53YYRDXkg7-e4gVY",
-    "v": "20261101h",
+    "v": "20261101i",
     "nav": [
         ("Traffic Ticket Lawyer El Paso", "/"),
         ("Services", "/services/"),
@@ -86,7 +86,7 @@ def post_card(p):
 
 def sidebar(current=None, cta=True):
     recent = "".join(f'<li><a href="{p["path"]}">{p["h1"]}</a><small>{fmt_date(p["date"])}</small></li>' for p in all_posts() if p["path"] != current)
-    box = f'''<div class="widget box"><h3>Free Case Evaluation</h3><p>Don't pay that ticket. Call or text the office and we'll check your tickets and warrants for free.</p><a class="tel" href="tel:{SITE['phone_e164']}">{PH}</a><a class="btn white" href="/hire-me/">Hire Me Online</a><a class="btn" href="/traffic-ticket-and-warrants-lookup-form/">Check for Warrants</a></div>''' if cta else ""
+    box = f'''<div class="widget box"><h3>Free Case Evaluation</h3><p>Don't pay that ticket. Call the office and we'll check your tickets and warrants for free.</p><a class="tel" href="tel:{SITE['phone_e164']}">{PH}</a><a class="btn white" href="/hire-me/">Hire Me Online</a><a class="btn" href="/traffic-ticket-and-warrants-lookup-form/">Check for Warrants</a></div>''' if cta else ""
     return f'''<aside class="side" aria-label="Sidebar">{box}
 <div class="widget"><h3>Recent Posts</h3><ul>{recent}</ul></div>
 <div class="widget"><h3>Traffic Ticket Help</h3><ul>
@@ -124,7 +124,7 @@ def lead_form(kind="hire", heading=None):
         btn = "Check My Tickets &amp; Warrants"
     else:
         h = heading or "Hire Me Online — Fight Your Ticket"
-        intro = "Thank you for your consideration. I will fight hard to get you a favorable result for your traffic ticket citation. Please fill out what you can — a staff member will call or text you to confirm the details and the flat fee before any work begins."
+        intro = "Thank you for your consideration. I will fight hard to get you a favorable result for your traffic ticket citation. Please fill out what you can — a staff member will call you to confirm the details and the flat fee before any work begins."
         extra = f'''<label for="f-type">What kind of ticket did you get? *</label><select id="f-type" name="ticket_type" required>{opts}</select>
 <div class="row"><div><label for="f-count">How many tickets?</label><input id="f-count" name="count" type="number" min="1" max="50" placeholder="1"></div><div><label for="f-warrant">Do you have warrants?</label><select id="f-warrant" name="warrants"><option>Not sure</option><option>No</option><option>Yes — 1</option><option>Yes — 2</option><option>Yes — 3 or more</option></select></div></div>
 <label for="f-cit">Citation number(s) (optional)</label><input id="f-cit" name="citation" placeholder="On the top of your ticket">'''
@@ -137,7 +137,7 @@ def lead_form(kind="hire", heading=None):
 <label for="f-msg">Tell us what happened (optional)</label><textarea id="f-msg" name="message" rows="4" placeholder="Where were you stopped, court date on the ticket, anything else we should know"></textarea>
 <label class="hp" aria-hidden="true">Leave this field empty<input name="website" tabindex="-1" autocomplete="off"></label>
 <button class="btn" type="submit">{btn}</button>
-<p class="note">By submitting you agree to be contacted by El Paso Traffic Ticket Firm by phone, text or email about your case. Submitting this form does not create an attorney–client relationship until the firm confirms representation. Message and data rates may apply. See our <a href="/privacy-policy/">privacy policy</a>.</p>
+<p class="note">By submitting you agree to be contacted by El Paso Traffic Ticket Firm by phone or email about your case. Submitting this form does not create an attorney–client relationship until the firm confirms representation. See our <a href="/privacy-policy/">privacy policy</a>.</p>
 <div class="msg" role="status" aria-live="polite"></div>
 </form>'''
 
@@ -417,7 +417,7 @@ def body_contact():
   <div class="contact-grid">
     <div class="item"><h2>General Questions</h2><p><a href="mailto:{SITE['email']}">{SITE['email']}</a></p></div>
     <div class="item"><h2>Our Location</h2><p><strong>El Paso Traffic Ticket Firm – West</strong><br><a href="{SITE['maps']}" target="_blank" rel="noopener">7362 Remcon Cir<br>El Paso, TX 79912</a></p></div>
-    <div class="item"><h2>Phone</h2><p><a href="tel:{SITE['phone_e164']}">{PH}</a><br><span style="font-weight:400;color:var(--muted);font-size:.9rem">Call or text — no office visit is necessary</span></p></div>
+    <div class="item"><h2>Phone</h2><p><a href="tel:{SITE['phone_e164']}">{PH}</a><br><span style="font-weight:400;color:var(--muted);font-size:.9rem">Call us — no office visit is necessary</span></p></div>
   </div>
   <iframe class="map" src="https://www.google.com/maps?q=7362+Remcon+Cir,+El+Paso,+TX+79912&output=embed" title="Map to El Paso Traffic Ticket Firm – West, 7362 Remcon Cir, El Paso, TX 79912" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
 </div></section>
@@ -456,8 +456,8 @@ def body_hire():
 <article class="content" style="font-size:1rem">
   <h2 style="margin-top:0">How it works</h2>
   <ol class="steps">
-    <li><strong>Send us your ticket.</strong> Fill out the form (or <a href="sms:+19152001133">text a photo of your citation</a> to {PH}).</li>
-    <li><strong>We confirm the flat fee.</strong> A staff member calls or texts you, confirms the court and citation details and quotes the flat fee — no surprises.</li>
+    <li><strong>Send us your ticket.</strong> Fill out the form, or call {PH}.</li>
+    <li><strong>We confirm the flat fee.</strong> A staff member calls you, confirms the court and citation details and quotes the flat fee — no surprises.</li>
     <li><strong>We take it from there.</strong> We file our appearance so you don't have to go to court, and we fight for a dismissal, deferred disposition or the best available result. We keep you updated until the case is closed.</li>
   </ol>
   <p>Have an active warrant? Hiring us lets us post an appearance bond to recall the warrant and fight the underlying ticket. Learn more on the <a href="/warrant-lawyer/">warrant lawyer</a> page, or <a href="/traffic-ticket-and-warrants-lookup-form/">let us check for warrants</a> first.</p>
@@ -475,8 +475,8 @@ def body_fight():
 <article class="content" style="font-size:1rem">
   <h2 style="margin-top:0">What happens next</h2>
   <ol class="steps">
-    <li><strong>Send us your ticket.</strong> Fill out the form, or <a href="sms:+19152001133">text a photo of your citation</a> to {PH}.</li>
-    <li><strong>We confirm the flat fee.</strong> A staff member calls or texts you, confirms the court and citation details and quotes the flat fee — no surprises, no hourly billing.</li>
+    <li><strong>Send us your ticket.</strong> Fill out the form, or call {PH}.</li>
+    <li><strong>We confirm the flat fee.</strong> A staff member calls you, confirms the court and citation details and quotes the flat fee — no surprises, no hourly billing.</li>
     <li><strong>We fight it.</strong> We file our appearance so you don't go to court and we pursue a dismissal, deferred disposition or the best available result — and keep you updated until the case is closed.</li>
   </ol>
   <h3>Why not just pay it?</h3>
@@ -670,7 +670,7 @@ def body_privacy():
   <p>When you fill out a form on this site (hire-me, ticket and warrant lookup, or contact form) or schedule an appointment, we collect the information you provide, such as your name, phone number, email address, date of birth, driver's license number, citation numbers and a description of your case. This information is used only to check your court records, evaluate and quote your case, contact you about it, and provide legal services if you hire us.</p>
   <p>Our web host (Cloudflare) collects standard server logs (IP address, browser type, pages visited) for security and performance. We do not sell personal information.</p>
   <h2>Text messages and calls</h2>
-  <p>By submitting a form you agree that we may call, text or email you about your inquiry. Message and data rates may apply. Reply STOP to any text to opt out.</p>
+  <p>By submitting a form you agree that we may call or email you about your inquiry. Message and data rates may apply.</p>
   <h2>Embedded content</h2>
   <p>Pages on this site may embed content from Google Maps, YouTube and Calendly. These services may set cookies and collect data about your interaction with the embedded content under their own privacy policies.</p>
   <h2>How long we keep your data</h2>
@@ -722,7 +722,7 @@ PAGES = [
      "description": "Answers to common questions about El Paso traffic tickets: speeding options, suspended licenses, warrants, OMNI holds, guarantees, and what a traffic lawyer costs.",
      "body": body_faqs, "faq": FAQ, "priority": "0.7"},
     {"path": "/contact/", "title": "Contact El Paso Traffic Ticket Firm – West | El Paso, TX", "h1": "Contact",
-     "description": "Contact El Paso Traffic Ticket Firm – West at 7362 Remcon Cir, El Paso, TX 79912. Call or text 915-200-1133 or email west@elpasotrafficticket.com. Meet Robert Navar.",
+     "description": "Contact El Paso Traffic Ticket Firm – West at 7362 Remcon Cir, El Paso, TX 79912. Call 915-200-1133 or email west@elpasotrafficticket.com. Meet Robert Navar.",
      "image": "/images/el-paso-traffic-ticket-firm-team-1200.webp", "body": body_contact, "page_type": "ContactPage", "priority": "0.8"},
     {"path": "/schedule-an-appointment/", "title": "Schedule a Free Consultation | El Paso Traffic Ticket Firm", "h1": "Schedule an Appointment",
      "description": "Book a free traffic ticket consultation with El Paso Traffic Ticket Firm. Pick a time online and we'll call to review your tickets, warrants and options.",

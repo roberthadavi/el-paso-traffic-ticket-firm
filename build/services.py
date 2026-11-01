@@ -72,7 +72,7 @@ def service_body(s):
   {s["intro"]}
   {secs}
   {faq_html(s.get("faq"))}
-  <div class="callout"><strong>Talk to a lawyer about your ticket.</strong> Free case evaluation by phone or text at {TEL}, or <a href="/fight-your-ticket/">send us your citation online</a>. No office visit needed.</div>
+  <div class="callout"><strong>Talk to a lawyer about your ticket.</strong> Free case evaluation by phone at {TEL}, or <a href="/fight-your-ticket/">send us your citation online</a>. No office visit needed.</div>
   {resources_html(s.get("resources"))}
   <section class="related-svc"><h2>Related services</h2>{tiles(rel)}</section>
   {P.related([("All services", "/services/"), ("Should I Hire a Traffic Ticket Lawyer?", "/should-i-hire-a-traffic-ticket-lawyer/"), ("Frequently Asked Questions", "/faqs/"), ("Check for tickets & warrants (free)", "/traffic-ticket-and-warrants-lookup-form/")])}
@@ -91,10 +91,10 @@ def hub_body():
 <section class="sec alt"><div class="wrap content" style="max-width:900px">
   <h2 style="margin-top:0">How we handle an El Paso traffic ticket</h2>
   <ol class="steps">
-    <li><strong>Free case evaluation.</strong> Call, text or <a href="/fight-your-ticket/">send the citation online</a>. We check every El Paso court for other tickets or warrants under your name at no charge.</li>
+    <li><strong>Free case evaluation.</strong> Call or <a href="/fight-your-ticket/">send the citation online</a>. We check every El Paso court for other tickets or warrants under your name at no charge.</li>
     <li><strong>Flat fee, quoted up front.</strong> You know the cost before we start. Most clients find it is less than the fine plus the insurance increase a conviction causes.</li>
     <li><strong>We appear for you.</strong> We file our appearance so you do not miss work or school, request discovery, and pursue a dismissal, deferred disposition or driving safety course — whichever protects your record.</li>
-    <li><strong>You get updates until it's closed.</strong> Text or email, your choice.</li>
+    <li><strong>You get updates until it's closed.</strong> By phone or email, your choice.</li>
   </ol>
   <p>Serving El Paso and the surrounding communities — see our <a href="/areas-served/">areas served</a> page. Read <a href="/should-i-hire-a-traffic-ticket-lawyer/">why hiring a lawyer usually costs less than paying the ticket</a>.</p>
 </div></section>'''
