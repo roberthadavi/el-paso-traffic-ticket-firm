@@ -701,7 +701,7 @@ PAGES = [
      "image": "/images/el-paso-traffic-ticket-firm-team-1200.webp", "body": body_should_hire, "priority": "0.8"},
     {"path": "/faqs/", "title": "Traffic Ticket FAQs | El Paso Traffic Ticket Firm", "h1": "FAQs",
      "description": "Answers to common questions about El Paso traffic tickets: speeding options, suspended licenses, warrants, OMNI holds, guarantees, and what a traffic lawyer costs.",
-     "body": body_faqs, "faq": FAQ, "page_type": "FAQPage", "priority": "0.7"},
+     "body": body_faqs, "faq": FAQ, "priority": "0.7"},
     {"path": "/contact/", "title": "Contact El Paso Traffic Ticket Firm – West | El Paso, TX", "h1": "Contact",
      "description": "Contact El Paso Traffic Ticket Firm – West at 7362 Remcon Cir, El Paso, TX 79912. Call or text 915-200-1133 or email help@elpasotrafficticket.com. Meet Robert Navar.",
      "image": "/images/el-paso-traffic-ticket-firm-team-1200.webp", "body": body_contact, "page_type": "ContactPage", "priority": "0.8"},
