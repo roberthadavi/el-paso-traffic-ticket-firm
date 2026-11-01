@@ -5,7 +5,7 @@
 Run `python3 build/build.py` first (EN pages must exist). Translations: build/es/strings.json {en: es}. Slugs: SLUGS below.
 """
 import sys, json, pathlib, re, copy
-from bs4 import BeautifulSoup, NavigableString, Comment
+from bs4 import BeautifulSoup, NavigableString, Comment, Doctype
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 PUB = ROOT / "public"
@@ -64,7 +64,7 @@ def en_pages():
 def walk(soup, fn):
     """fn(string, kind) → replacement or None. kind: 'text' | attr name."""
     for t in soup.find_all(string=True):
-        if isinstance(t, Comment) or t.parent.name in ("script", "style", "noscript"): continue
+        if isinstance(t, (Comment, Doctype)) or t.parent.name in ("script", "style", "noscript"): continue
         s = str(t)
         if not s.strip() or NO_TRANSLATE.match(s): continue
         r = fn(s, "text")

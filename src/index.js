@@ -6,6 +6,9 @@ const CANONICAL_HOST = "elpasotrafficticketfirm.com";
 
 // Old WordPress URLs that no longer exist → where they should go (301).
 const REDIRECTS = {
+  "/es": "/es/abogado-de-multas-de-transito-el-paso-tx/",
+  "/es/index": "/es/abogado-de-multas-de-transito-el-paso-tx/",
+  "/espanol": "/es/abogado-de-multas-de-transito-el-paso-tx/",
   "/test": "/hire-me/",
   "/submission-confirmed": "/hire-me/",
   "/browse-submissions": "/hire-me/",

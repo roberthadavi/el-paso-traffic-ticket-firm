@@ -221,6 +221,20 @@ def main():
         if p.get("image"):
             sm.append(f"<image:image><image:loc>{SITE['url']}{p['image']}</image:loc></image:image>")
         sm.append("</url>")
+    # Spanish twins (built by es_build.py from the same page list)
+    try:
+        import es_build
+        for p in urls:
+            es = es_build.SLUGS.get(p["path"])
+            if not es: continue
+            sm.append("<url>")
+            sm.append(f"<loc>{SITE['url']}{es}</loc>")
+            sm.append(f"<lastmod>{p.get('modified', TODAY)}</lastmod>")
+            sm.append(f"<changefreq>{p.get('changefreq','monthly')}</changefreq>")
+            sm.append(f"<priority>{p.get('priority','0.7')}</priority>")
+            sm.append("</url>")
+    except ImportError:
+        pass
     sm.append("</urlset>")
     (PUB / "sitemap.xml").write_text("\n".join(sm))
     (PUB / "robots.txt").write_text(f"User-agent: *\nAllow: /\nDisallow: /api/\n\nSitemap: {SITE['url']}/sitemap.xml\n")

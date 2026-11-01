@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "description": "elpasotrafficticketfirm.com — static site + Cloudflare Worker",
   "scripts": {
-    "build": "python3 build/build.py",
+    "build": "echo \"public/ is prebuilt and committed; run npm run gen locally\"",
+    "gen": "python3 build/build.py && python3 build/es_build.py build",
     "dev": "wrangler dev",
     "deploy": "wrangler deploy"
   },
