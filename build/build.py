@@ -43,7 +43,7 @@ def head(p):
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(desc)}">
-<link rel="canonical" href="{url}">
+{"" if p.get("nocanonical") else f'<link rel="canonical" href="{url}">'}
 <meta name="robots" content="{robots}">
 <meta property="og:type" content="{'article' if p.get('type')=='post' else 'website'}">
 <meta property="og:site_name" content="{esc(SITE['name'])}">
@@ -63,6 +63,8 @@ def head(p):
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="alternate" hreflang="en" href="{url}">
+<link rel="alternate" hreflang="x-default" href="{url}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Maven+Pro:wght@400;600;700&display=swap">
@@ -165,6 +167,7 @@ def org():
         "founder": {"@type": "Person", "name": "Robert Navar", "jobTitle": "Attorney", "alumniOf": "Southern Methodist University Dedman School of Law"},
         "knowsAbout": ["Traffic tickets", "Speeding tickets", "Traffic warrants", "Failure to appear", "No insurance tickets", "CDL violations", "Class C misdemeanors", "Defensive driving dismissal", "Deferred adjudication"],
         "sameAs": [u for _, _, u in s["social"]] + [s["maps"]],
+        "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Traffic ticket defense services", "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": n, "areaServed": "El Paso, TX", "url": s["url"] + ("/warrant-lawyer/" if "Warrant" in n else "/fight-your-ticket/")}} for n in P.SERVICES]},
     }
 
 def schema(p):
@@ -198,7 +201,7 @@ def main():
         body = p["body"]() if callable(p["body"]) else p["body"]
         write(p["path"], head(p) + body + footer(p))
     # 404
-    p404 = {"path": "/404/", "title": "Page Not Found | " + SITE["name"], "description": "The page you requested could not be found.", "h1": "Page not found", "robots": "noindex, follow"}
+    p404 = {"path": "/404/", "title": "Page Not Found | " + SITE["name"], "description": "The page you requested could not be found.", "h1": "Page not found", "robots": "noindex, follow", "nocanonical": True}
     (PUB / "404.html").write_text(head(p404) + P.body_404() + footer(p404))
     # sitemap
     urls = [p for p in P.PAGES if "noindex" not in p.get("robots", "")]

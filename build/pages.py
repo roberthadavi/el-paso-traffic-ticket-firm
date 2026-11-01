@@ -10,7 +10,7 @@ SITE = {
     "address": "7362 Remcon Cir, El Paso, TX 79912",
     "maps": "https://maps.google.com/?cid=4565922412461410031",
     "review_url": "https://search.google.com/local/writereview?placeid=ChIJqcjUJYZD54YR78bBKj5qXT8",
-    "v": "20261101b",
+    "v": "20261101c",
     "nav": [
         ("Traffic Ticket Lawyer El Paso", "/"),
         ("Contact", "/contact/"),
@@ -30,9 +30,9 @@ SITE = {
 PH = SITE["phone"]; TEL = f'<a href="tel:{SITE["phone_e164"]}">{PH}</a>'
 MAIL = f'<a href="mailto:{SITE["email"]}">{SITE["email"]}</a>'
 
-MUNI = "https://public.fce.elpasotexas.gov/fullcourtweb/start.do"
+MUNI = "https://public-fce.elpasotexas.gov/fullcourtweb/start.do"
 JP = "https://casesearch.epcounty.com/PublicAccess/default.aspx"
-TDLR = "https://www.tdlr.texas.gov/driver/driverfaq.htm"
+TDLR = "https://www.tdlr.texas.gov/driver/education/students/faq.htm"
 DPS = "https://www.dps.texas.gov/section/driver-license"
 TRANSP = "https://statutes.capitol.texas.gov/Docs/TN/htm/TN.543.htm"
 CCP45 = "https://statutes.capitol.texas.gov/Docs/CR/htm/CR.45.htm"
@@ -259,7 +259,7 @@ def body_home():
 # ---------------------------------------------------------------- WARRANT LAWYER
 def body_warrant():
     return f'''
-<div class="band"><div class="wrap"><h1>Warrant Lawyer</h1><p>Traffic ticket warrant attorney serving El Paso Municipal Court and El Paso County JP courts</p></div></div>
+<div class="band"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <span>Warrant Lawyer</span></nav><h1>Warrant Lawyer</h1><p>Traffic ticket warrant attorney serving El Paso Municipal Court and El Paso County JP courts</p></div></div>
 <section class="sec"><div class="wrap layout">
 <article class="content">
   <h2 class="red" style="margin-top:0">Need Help With a Warrant for an El Paso Traffic Ticket? I Can Check for You for Free!</h2>
@@ -330,7 +330,7 @@ def body_warrant():
 # ---------------------------------------------------------------- SHOULD I HIRE
 def body_should_hire():
     return f'''
-<div class="band"><div class="wrap"><h1>Should I Hire a Traffic Ticket Lawyer?</h1><p>Why an El Paso traffic ticket lawyer is often cheaper than paying the ticket</p></div></div>
+<div class="band"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <span>Should I Hire a Traffic Ticket Lawyer?</span></nav><h1>Should I Hire a Traffic Ticket Lawyer?</h1><p>Why an El Paso traffic ticket lawyer is often cheaper than paying the ticket</p></div></div>
 <section class="sec"><div class="wrap layout">
 <article class="content">
   <figure><img src="/images/el-paso-traffic-ticket-firm-team-800.webp" srcset="/images/el-paso-traffic-ticket-firm-team-480.webp 480w, /images/el-paso-traffic-ticket-firm-team-800.webp 800w, /images/el-paso-traffic-ticket-firm-team-1200.webp 1200w" sizes="(max-width:900px) 92vw, 760px" width="760" height="507" alt="El Paso Traffic Ticket Firm team of traffic ticket lawyers" fetchpriority="high"></figure>
@@ -384,7 +384,7 @@ FAQ = [
 def body_faqs():
     items = "".join(f'<details><summary>{q}</summary><div class="a"><p>{a}</p></div></details>' for q, a in FAQ)
     return f'''
-<div class="band"><div class="wrap"><h1>FAQs</h1><p>Frequently asked questions about traffic tickets and warrants in El Paso, Texas</p></div></div>
+<div class="band"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <span>FAQs</span></nav><h1>FAQs</h1><p>Frequently asked questions about traffic tickets and warrants in El Paso, Texas</p></div></div>
 <section class="sec"><div class="wrap layout">
 <article class="content">
   <div class="faq">{items}</div>
@@ -398,7 +398,7 @@ def body_faqs():
 # ---------------------------------------------------------------- CONTACT
 def body_contact():
     return f'''
-<div class="band"><div class="wrap"><h1>Contact</h1><p>El Paso Traffic Ticket Firm – West · Attorney Robert Navar</p></div></div>
+<div class="band"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <span>Contact</span></nav><h1>Contact</h1><p>El Paso Traffic Ticket Firm – West · Attorney Robert Navar</p></div></div>
 <section class="sec"><div class="wrap">
   <div class="contact-grid">
     <div class="item"><h2>General Questions</h2><p><a href="mailto:{SITE['email']}">{SITE['email']}</a></p></div>
@@ -424,7 +424,7 @@ def body_contact():
 # ---------------------------------------------------------------- SCHEDULE
 def body_schedule():
     return f'''
-<div class="band"><div class="wrap"><h1>Schedule an Appointment</h1><p>Book a free traffic ticket consultation with El Paso Traffic Ticket Firm</p></div></div>
+<div class="band"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <span>Schedule an Appointment</span></nav><h1>Schedule an Appointment</h1><p>Book a free traffic ticket consultation with El Paso Traffic Ticket Firm</p></div></div>
 <section class="sec"><div class="wrap">
   <p class="lead center">Pick a time that works for you and we'll call to go over your tickets, warrants and options. Prefer not to wait? Call {TEL} now or <a href="/hire-me/">hire me online</a>.</p>
   <div class="calendly-inline-widget" data-url="https://calendly.com/traffic-ticket-lawyer-elpaso/free-traffic-ticket-consultation?hide_gdpr_banner=1&primary_color=d72227" style="min-width:320px;height:760px"></div>
@@ -436,7 +436,7 @@ def body_schedule():
 # ---------------------------------------------------------------- HIRE ME
 def body_hire():
     return f'''
-<div class="band"><div class="wrap"><h1>Hire Me</h1><p>Hire an El Paso traffic ticket lawyer online in two minutes</p></div></div>
+<div class="band"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <span>Hire Me</span></nav><h1>Hire Me</h1><p>Hire an El Paso traffic ticket lawyer online in two minutes</p></div></div>
 <section class="sec"><div class="wrap layout">
 <div>{lead_form("hire")}</div>
 <article class="content" style="font-size:1rem">
@@ -455,7 +455,7 @@ def body_hire():
 # ---------------------------------------------------------------- FIGHT YOUR TICKET
 def body_fight():
     return f'''
-<div class="band"><div class="wrap"><h1>Fight Your Ticket</h1><p>Hire an El Paso traffic ticket lawyer online — flat fee, no court appearance for you</p></div></div>
+<div class="band"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <span>Fight Your Ticket</span></nav><h1>Fight Your Ticket</h1><p>Hire an El Paso traffic ticket lawyer online — flat fee, no court appearance for you</p></div></div>
 <section class="sec"><div class="wrap layout">
 <div>{lead_form("hire", "Fight Your Ticket — Start Here")}</div>
 <article class="content" style="font-size:1rem">
@@ -477,7 +477,7 @@ def body_fight():
 # ---------------------------------------------------------------- LOOKUP FORM
 def body_lookup():
     return f'''
-<div class="band"><div class="wrap"><h1>Traffic Ticket and Warrants Lookup Form</h1><p>Free El Paso ticket and warrant check — Municipal Court and Justice of the Peace courts</p></div></div>
+<div class="band"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <span>Traffic Ticket and Warrants Lookup Form</span></nav><h1>Traffic Ticket and Warrants Lookup Form</h1><p>Free El Paso ticket and warrant check — Municipal Court and Justice of the Peace courts</p></div></div>
 <section class="sec"><div class="wrap layout">
 <div>{lead_form("lookup")}</div>
 <article class="content" style="font-size:1rem">
@@ -497,7 +497,7 @@ def body_lookup():
 def body_blog():
     cards = "".join(post_card(p) for p in POSTS)
     return f'''
-<div class="band"><div class="wrap"><h1>Blog</h1><p>El Paso traffic news, Texas traffic law and how to protect your driving record</p></div></div>
+<div class="band"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <span>Blog</span></nav><h1>Blog</h1><p>El Paso traffic news, Texas traffic law and how to protect your driving record</p></div></div>
 <section class="sec"><div class="wrap layout">
 <div><div class="cards">{cards}</div></div>
 {sidebar(cta=True)}
@@ -505,7 +505,7 @@ def body_blog():
 
 def post_wrap(p, inner, rel):
     return f'''
-<div class="band"><div class="wrap"><h1>{p['h1']}</h1><p><a href="/category/blog/" style="color:#ddd">Blog</a> · <time datetime="{p['date']}">October 8, 2022</time> · by Attorney Robert Navar</p></div></div>
+<div class="band"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/category/blog/">Blog</a> › <span>{p['h1']}</span></nav><h1>{p['h1']}</h1><p><time datetime="{p['date']}">Published October 8, 2022</time> · Updated <time datetime="2026-11-01">November 1, 2026</time> · by Attorney Robert Navar</p></div></div>
 <section class="sec"><div class="wrap layout">
 <article class="content">
   <figure><img src="{p['img']}" alt="{p['alt']}" width="800" height="450" fetchpriority="high" style="width:100%;aspect-ratio:16/9;object-fit:cover"></figure>
@@ -643,7 +643,7 @@ def body_warrants_lifted():
 # ---------------------------------------------------------------- POLICIES
 def body_privacy():
     return f'''
-<div class="band"><div class="wrap"><h1>Privacy Policy</h1><p>Effective November 1, 2026</p></div></div>
+<div class="band"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <span>Privacy Policy</span></nav><h1>Privacy Policy</h1><p>Effective November 1, 2026</p></div></div>
 <section class="sec"><div class="wrap content" style="max-width:860px">
   <h2>Who we are</h2>
   <p>This website, elpasotrafficticketfirm.com, is operated by El Paso Traffic Ticket Firm – West, {SITE['address']}, phone {TEL}, email {MAIL}.</p>
@@ -664,7 +664,7 @@ def body_privacy():
 
 def body_terms():
     return f'''
-<div class="band"><div class="wrap"><h1>Terms and Conditions</h1><p>Effective November 1, 2026</p></div></div>
+<div class="band"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <span>Terms and Conditions</span></nav><h1>Terms and Conditions</h1><p>Effective November 1, 2026</p></div></div>
 <section class="sec"><div class="wrap content" style="max-width:860px">
   <h2>Attorney advertising</h2>
   <p>This website is attorney advertising for El Paso Traffic Ticket Firm – West, Attorney Robert Navar, principal office {SITE['address']}. The information on this website is for general information purposes only and is not legal advice. Reading this site or contacting the firm does not create an attorney–client relationship; a relationship is formed only by a signed engagement with the firm.</p>
@@ -682,7 +682,7 @@ def body_terms():
 
 def body_404():
     return f'''
-<div class="band"><div class="wrap"><h1>Page not found</h1><p>Sorry, we couldn't find that page.</p></div></div>
+<div class="band"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <span>Page not found</span></nav><h1>Page not found</h1><p>Sorry, we couldn't find that page.</p></div></div>
 <section class="sec"><div class="wrap center">
   <p class="lead">Try one of these instead, or call {TEL} and we'll point you in the right direction.</p>
   <div class="ctarow"><a class="btn" href="/">Home</a><a class="btn" href="/hire-me/">Hire Me Online</a><a class="btn outline" href="/warrant-lawyer/">Warrant Lawyer</a><a class="btn outline" href="/category/blog/">Blog</a></div>
@@ -719,7 +719,8 @@ PAGES = [
      "body": body_lookup, "priority": "0.8"},
     {"path": "/category/blog/", "title": "Traffic Blog | El Paso Traffic Ticket Firm", "h1": "Blog",
      "description": "El Paso traffic news and Texas traffic law: how to fight a ticket, defensive driving dismissals, the Texas points system, and getting El Paso warrants lifted.",
-     "body": body_blog, "page_type": "CollectionPage", "priority": "0.6", "changefreq": "weekly"},
+     "body": body_blog, "page_type": "CollectionPage", "priority": "0.6", "changefreq": "weekly",
+     "schema_extra": [{"@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": i+1, "url": SITE["url"]+p["path"], "name": p["h1"]} for i,p in enumerate(POSTS)]}]},
     {"path": "/privacy-policy/", "title": "Privacy Policy | El Paso Traffic Ticket Firm", "h1": "Privacy Policy", "description": "How El Paso Traffic Ticket Firm – West collects, uses and protects the information you submit through this website.", "body": body_privacy, "priority": "0.2", "changefreq": "yearly"},
     {"path": "/terms-and-conditions/", "title": "Terms and Conditions | El Paso Traffic Ticket Firm", "h1": "Terms and Conditions", "description": "Terms of use and attorney-advertising disclosures for elpasotrafficticketfirm.com.", "body": body_terms, "priority": "0.2", "changefreq": "yearly"},
 ]
