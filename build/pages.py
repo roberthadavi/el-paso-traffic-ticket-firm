@@ -6,11 +6,11 @@ SITE = {
     "url": "https://elpasotrafficticketfirm.com",
     "phone": "915-200-1133",
     "phone_e164": "+19152001133",
-    "email": "help@elpasotrafficticket.com",
+    "email": "west@elpasotrafficticket.com",
     "address": "7362 Remcon Cir, El Paso, TX 79912",
-    "maps": "https://maps.google.com/?cid=4565922412461410031",
-    "review_url": "https://search.google.com/local/writereview?placeid=ChIJqcjUJYZD54YR78bBKj5qXT8",
-    "v": "20261101c",
+    "maps": "https://www.google.com/maps/place/?q=place_id:ChIJY-lIWFP53YYRDXkg7-e4gVY",
+    "review_url": "https://search.google.com/local/writereview?placeid=ChIJY-lIWFP53YYRDXkg7-e4gVY",
+    "v": "20261101d",
     "nav": [
         ("Traffic Ticket Lawyer El Paso", "/"),
         ("Contact", "/contact/"),
@@ -24,7 +24,7 @@ SITE = {
         ("tw", "X (Twitter)", "https://twitter.com/trafficlawyerep"),
         ("ig", "Instagram", "https://www.instagram.com/trafficticketlawyers/"),
         ("in", "LinkedIn", "https://www.linkedin.com/in/elpasotrafficticketfirm/"),
-        ("g", "Google Business Profile", "https://maps.google.com/?cid=4565922412461410031"),
+        ("g", "Google Business Profile", "https://www.google.com/maps/place/?q=place_id:ChIJY-lIWFP53YYRDXkg7-e4gVY"),
     ],
 }
 PH = SITE["phone"]; TEL = f'<a href="tel:{SITE["phone_e164"]}">{PH}</a>'
@@ -38,15 +38,11 @@ TRANSP = "https://statutes.capitol.texas.gov/Docs/TN/htm/TN.543.htm"
 CCP45 = "https://statutes.capitol.texas.gov/Docs/CR/htm/CR.45.htm"
 
 REVIEWS = [
-    ("Compita Uks", "Feb 2023", "I hired them, and out of 5 city citations and 4 county tickets, all 5 city were dismissed, and 3 of the county's as well! Great job! Madeline was kind and courteous. I got A+ service. Nicely done. Great team."),
-    ("Estefania Jimenez", "Feb 2023", "A friend recommended me to call this place, and I will do the same and recommend this to everyone else if you have traffic tickets or active warrants! Madelyn was extremely helpful, patient and thorough. The entire process was quickly done over the phone, and their fees were reasonable and affordable."),
-    ("Ruby Ramirez", "Feb 2023", "Called today and spoke with Angela about tickets. She was courteous and genuine about trying to help me, very positive and helpful, and kept an amazing professional manner. Great customer service and with a smile. Thank you Angela for making this quick and painless."),
-    ("Daniel Napoles", "Jan 2023", "I've used this law firm countless times and each time I've gotten quality. From the minute I call I experience amazing customer service. When it comes to the ticket(s) I've either had it outright dismissed or I was given the option of defensive driving. I highly recommend this firm!"),
-    ("Maleni Acosta", "Jan 2023", "I got a ticket and then moved abroad to Europe. I no longer had a US phone, so we did everything through email and it went very well. Anytime I had a question they responded within a reasonable amount of time. The lawyer had great success in the end. Thank you — I recommend!"),
-    ("John Enriquez", "Dec 2022", "I received a speeding ticket last year and the attorney's office was able to get the ticket dismissed. The staff are pleasant and highly professional. I'm extremely satisfied with the service provided and highly recommend them to any and all who need them."),
-    ("Catherine Moreno", "Nov 2022", "Mr. Navar has been excellent in handling my citation and court dates. Staff has been great, friendly and hard working to assist me with my concerns. Definitely recommend and will definitely come back to this law office in the future if needed."),
-    ("Ben Lin", "Aug 2022", "Great experience and great price! I received a speeding ticket two years ago and they were able to get it dismissed without any additional costs. They also kept in touch to inform me that my citation has been completely dismissed! Highly recommend!"),
-    ("Julie Duke", "Jul 2022", "As a busy professional, I have depended upon Robert Navar and his team to represent me in court regarding my traffic citations. I am absolutely pleased every time I have hired this firm. I highly recommend them for their pricing, informative nature and timeliness of the process."),
+    ("Google reviewer", "★ 5.0", "I highly recommend El Paso Traffic Ticket Firm! They were professional, helpful, and made the entire process easy and stress-free. I was so happy to receive the news that my case was dismissed. I truly appreciate all their hard work and excellent service."),
+    ("Google reviewer", "★ 5.0", "I'm so happy they took care of my red light case. I was stressed but I knew it was in good hands. They dismissed my case and I may now move on with my life. Highly recommend."),
+    ("Google reviewer", "★ 5.0", "I had a great experience with El Paso Traffic Ticket Firm. They handled my case professionally and kept me informed throughout the entire process. Thanks to their hard work and expertise, my traffic ticket was dismissed! The whole process was easy and stress-free."),
+    ("Google reviewer", "★ 5.0", "Thank you so much to this firm. It took 2 weeks for this to be done and put away. It was dismissed. I recommend to a lot of people in the City of El Paso to look at this firm — very nice and very patient, and everything was done quickly."),
+    ("Google reviewer", "★ 5.0", "I could only say great things about this law firm and their service. Wonderful service and communication — whenever I had a question they were always quick and concise with their answers and always providing updates. Best of all they were able to get my ticket dismissed."),
 ]
 
 def reviews_section(n=6, heading="What People Are Saying on Google…"):
@@ -56,8 +52,8 @@ def reviews_section(n=6, heading="What People Are Saying on Google…"):
   <div class="wrap">
     <h2 id="rev-h" class="center">{heading}</h2>
     <div class="rating">
-      <span class="score">4.9</span><span class="stars" aria-hidden="true">★★★★★</span>
-      <span class="gbadge">Based on 3,100+ Google reviews for <a href="{SITE['maps']}" target="_blank" rel="noopener">El Paso Traffic Ticket Firm – Attorney Robert Navar</a></span>
+      <span class="score">5.0</span><span class="stars" aria-hidden="true">★★★★★</span>
+      <span class="gbadge">Based on 235+ Google reviews for <a href="{SITE['maps']}" target="_blank" rel="noopener">El Paso Traffic Ticket Firm – West</a></span>
       <a class="btn outline" href="{SITE['review_url']}" target="_blank" rel="noopener" style="padding:8px 18px;font-size:.85rem">Review us on Google</a>
     </div>
     <div class="reviews">{cards}</div>
@@ -151,17 +147,17 @@ def body_home():
     <p><strong>Experienced Traffic Ticket Attorney in El Paso, Texas</strong></p>
     <p>At El Paso Traffic Ticket Firm – West, we specialize in providing expert legal representation for individuals dealing with traffic tickets from the <a href="{MUNI}" target="_blank" rel="noopener">El Paso Municipal Court</a> and the Justice of the Peace courts. Our team of skilled attorneys understands the nuances of traffic violation law in El Paso and is committed to securing the best possible outcome for your case. We offer free case evaluations for your traffic-related issues, including <a href="/warrant-lawyer/">warrants</a> and failure-to-appear citations.</p>
     <p>Save Time, Money, and NO JAIL TIME.<br>Let the El Paso Traffic Ticket Firm – West team handle it for you! Call {TEL}.</p>
-    <div class="trust"><span>4.9★ · 3,100+ Google reviews</span><span>Flat fees, quoted up front</span><span>You never go to court</span><span>Free warrant check</span></div>
+    <div class="trust"><span>5.0★ · 235+ Google reviews</span><span>Flat fees, quoted up front</span><span>You never go to court</span><span>Free warrant check</span></div>
   </div>
 </section>
 
-{reviews_section(6)}
+{reviews_section(5)}
 
 <section class="sec dark" aria-label="Results at a glance">
   <div class="wrap stats">
     <div class="stat"><img src="/images/icon-1-150.webp" alt="" width="84" height="84" loading="lazy"><div class="num">80%</div><div class="lbl">Dismissal Rate</div></div>
     <div class="stat"><img src="/images/icon-2-150.webp" alt="" width="84" height="84" loading="lazy"><div class="num">2,000+</div><div class="lbl">Clients Helped</div></div>
-    <div class="stat"><img src="/images/icon-3-150.webp" alt="" width="84" height="84" loading="lazy"><div class="num">3,100+</div><div class="lbl">Google Reviews</div></div>
+    <div class="stat"><img src="/images/icon-3-150.webp" alt="" width="84" height="84" loading="lazy"><div class="num">235+</div><div class="lbl">5-Star Google Reviews</div></div>
     <div class="stat"><img src="/images/icon-4-150.webp" alt="" width="84" height="84" loading="lazy"><div class="num">$5,000,000</div><div class="lbl">Total Client Savings</div></div>
   </div>
 </section>
@@ -431,7 +427,7 @@ def body_schedule():
   <noscript><p class="center"><a class="btn" href="https://calendly.com/traffic-ticket-lawyer-elpaso/free-traffic-ticket-consultation" target="_blank" rel="noopener">Open the scheduling calendar</a></p></noscript>
   <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </div></section>
-{reviews_section(6)}'''
+{reviews_section(5)}'''
 
 # ---------------------------------------------------------------- HIRE ME
 def body_hire():
@@ -450,7 +446,7 @@ def body_hire():
   <div class="callout">Questions before you hire? Read <a href="/should-i-hire-a-traffic-ticket-lawyer/">Should I Hire a Traffic Ticket Lawyer?</a> or the <a href="/faqs/">FAQs</a>, or call {TEL}.</div>
 </article>
 </div></section>
-{reviews_section(6)}'''
+{reviews_section(5)}'''
 
 # ---------------------------------------------------------------- FIGHT YOUR TICKET
 def body_fight():
@@ -472,7 +468,7 @@ def body_fight():
   <div class="callout">Prefer to talk first? Call {TEL} or <a href="/schedule-an-appointment/">schedule a free consultation</a>.</div>
 </article>
 </div></section>
-{reviews_section(6)}'''
+{reviews_section(5)}'''
 
 # ---------------------------------------------------------------- LOOKUP FORM
 def body_lookup():
@@ -691,7 +687,7 @@ def body_404():
 # ---------------------------------------------------------------- PAGE REGISTRY
 PAGES = [
     {"path": "/", "title": "Traffic Ticket Lawyer in El Paso, TX | El Paso Traffic Ticket Firm", "h1": "Traffic Ticket Lawyer in El Paso, Texas",
-     "description": "Traffic ticket lawyer in El Paso, TX. Don't pay your ticket — Attorney Robert Navar fights speeding tickets, warrants and Class C misdemeanors. Free evaluation, 4.9★ on Google.",
+     "description": "Traffic ticket lawyer in El Paso, TX. Don't pay your ticket — Attorney Robert Navar fights speeding tickets, warrants and Class C misdemeanors. Free evaluation, 5.0★ on Google.",
      "image": "/images/el-paso-traffic-ticket-firm-team-1200.webp", "body": body_home, "priority": "1.0", "changefreq": "weekly"},
     {"path": "/warrant-lawyer/", "title": "Warrant Lawyer in El Paso, TX | Traffic Ticket Warrants Recalled", "h1": "Warrant Lawyer",
      "description": "Warrant lawyer in El Paso, TX. We recall traffic ticket warrants, post appearance bonds and fight the underlying ticket so it never becomes a conviction.",
@@ -703,7 +699,7 @@ PAGES = [
      "description": "Answers to common questions about El Paso traffic tickets: speeding options, suspended licenses, warrants, OMNI holds, guarantees, and what a traffic lawyer costs.",
      "body": body_faqs, "faq": FAQ, "priority": "0.7"},
     {"path": "/contact/", "title": "Contact El Paso Traffic Ticket Firm – West | El Paso, TX", "h1": "Contact",
-     "description": "Contact El Paso Traffic Ticket Firm – West at 7362 Remcon Cir, El Paso, TX 79912. Call or text 915-200-1133 or email help@elpasotrafficticket.com. Meet Robert Navar.",
+     "description": "Contact El Paso Traffic Ticket Firm – West at 7362 Remcon Cir, El Paso, TX 79912. Call or text 915-200-1133 or email west@elpasotrafficticket.com. Meet Robert Navar.",
      "image": "/images/el-paso-traffic-ticket-firm-team-1200.webp", "body": body_contact, "page_type": "ContactPage", "priority": "0.8"},
     {"path": "/schedule-an-appointment/", "title": "Schedule a Free Consultation | El Paso Traffic Ticket Firm", "h1": "Schedule an Appointment",
      "description": "Book a free traffic ticket consultation with El Paso Traffic Ticket Firm. Pick a time online and we'll call to review your tickets, warrants and options.",

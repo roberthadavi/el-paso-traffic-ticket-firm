@@ -74,7 +74,7 @@ def head(p):
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="strip"><div class="wrap"><span>📞 Call or text <a href="tel:{SITE['phone_e164']}">{SITE['phone']}</a></span><span class="hours">Free case evaluation · Mon–Fri 8:30–5:30 · Se habla español</span><span><a href="/traffic-ticket-and-warrants-lookup-form/">Free warrant check →</a></span></div></div>
+<div class="strip"><div class="wrap"><span>📞 Call or text <a href="tel:{SITE['phone_e164']}">{SITE['phone']}</a></span><span class="hours">Free case evaluation · Mon–Fri 7:30–6:30 · Sat 9–4 · Se habla español</span><span><a href="/traffic-ticket-and-warrants-lookup-form/">Free warrant check →</a></span></div></div>
 <header class="hdr">
   <div class="wrap">
     <a class="logo" href="/" aria-label="{esc(SITE['name'])} home"><img src="/images/el-paso-traffic-ticket-firm-logo-300.webp" srcset="/images/el-paso-traffic-ticket-firm-logo-300.webp 300w, /images/el-paso-traffic-ticket-firm-logo-510.webp 510w" sizes="150px" width="150" height="95" alt="El Paso Traffic Ticket Firm logo — Traffic Ticket Lawyer El Paso, TX" fetchpriority="high"></a>
@@ -160,10 +160,10 @@ def org():
         "priceRange": "$$",
         "description": "Traffic ticket lawyer in El Paso, TX. Attorney Robert Navar fights speeding tickets, warrants, failure to appear, no insurance tickets and all Class C misdemeanors in El Paso Municipal Court and Justice of the Peace courts. Free consultations.",
         "address": {"@type": "PostalAddress", "streetAddress": "7362 Remcon Cir", "addressLocality": "El Paso", "addressRegion": "TX", "postalCode": "79912", "addressCountry": "US"},
-        "geo": {"@type": "GeoCoordinates", "latitude": 31.8336, "longitude": -106.5666},
+        "geo": {"@type": "GeoCoordinates", "latitude": 31.8393468, "longitude": -106.5630568},
         "hasMap": s["maps"],
         "areaServed": [{"@type": "City", "name": n} for n in ["El Paso", "Canutillo", "Horizon City", "Socorro", "Clint", "Anthony", "Vinton"]] + [{"@type": "AdministrativeArea", "name": "El Paso County, Texas"}],
-        "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:30", "closes": "17:30"}],
+        "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "07:30", "closes": "18:30"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "09:00", "closes": "16:00"}],
         "founder": {"@type": "Person", "name": "Robert Navar", "jobTitle": "Attorney", "alumniOf": "Southern Methodist University Dedman School of Law"},
         "knowsAbout": ["Traffic tickets", "Speeding tickets", "Traffic warrants", "Failure to appear", "No insurance tickets", "CDL violations", "Class C misdemeanors", "Defensive driving dismissal", "Deferred adjudication"],
         "sameAs": [u for _, _, u in s["social"]] + [s["maps"]],

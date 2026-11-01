@@ -68,7 +68,7 @@ async function handleContact(request, env) {
     console.log("Lead received but RESEND_API_KEY is not set:\n" + text);
     return json({ ok: false, error: "not_configured" }, 503);
   }
-  const to = (env.LEAD_TO_EMAIL || "help@elpasotrafficticket.com").split(",").map((s) => s.trim());
+  const to = (env.LEAD_TO_EMAIL || "west@elpasotrafficticket.com").split(",").map((s) => s.trim());
   const from = env.LEAD_FROM_EMAIL || "El Paso Traffic Ticket Firm <leads@elpasotrafficticketfirm.com>";
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",

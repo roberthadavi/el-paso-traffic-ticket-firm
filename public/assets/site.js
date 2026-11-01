@@ -29,7 +29,7 @@
           if(r.ok){msg.className='msg ok';msg.textContent='Thank you! We received your information and will contact you shortly. For faster service call 915-200-1133.';form.reset();}
           else{throw new Error(r.j&&r.j.error||'send_failed');}
         })
-        .catch(function(){msg.className='msg err';msg.innerHTML='Sorry, the form could not be sent right now. Please call or text <a href="tel:9152001133">915-200-1133</a> or email <a href="mailto:help@elpasotrafficticket.com">help@elpasotrafficticket.com</a>.';})
+        .catch(function(){msg.className='msg err';msg.innerHTML='Sorry, the form could not be sent right now. Please call or text <a href="tel:9152001133">915-200-1133</a> or email <a href="mailto:west@elpasotrafficticket.com">west@elpasotrafficticket.com</a>.';})
         .finally(function(){sub.disabled=false;sub.textContent=old;});
     });
   });

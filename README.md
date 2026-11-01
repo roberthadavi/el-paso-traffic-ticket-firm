@@ -18,5 +18,5 @@ Bump `SITE["v"]` in `build/pages.py` whenever `site.css` / `site.js` change (ass
 
 ## Secrets / vars (Cloudflare → Worker → Settings)
 - `RESEND_API_KEY` (secret) — required for lead emails. Until it is set the forms show the call/text fallback.
-- `LEAD_TO_EMAIL` — where leads go (default help@elpasotrafficticket.com; comma-separate for several).
+- `LEAD_TO_EMAIL` — where leads go (default west@elpasotrafficticket.com; comma-separate for several).
 - `LEAD_FROM_EMAIL` — must be on a Resend-verified domain (default leads@elpasotrafficticketfirm.com).
